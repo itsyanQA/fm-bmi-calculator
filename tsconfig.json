@@ -11,6 +11,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@customTypes/*": ["src/types/*"],
       "@pages/*": ["src/pages/*"],
+      "@features/*": ["src/features/*"],
       "@assets/*": ["public/assets/*"]
     },
 
