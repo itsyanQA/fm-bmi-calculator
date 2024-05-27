@@ -12,6 +12,7 @@
       "@customTypes/*": ["src/types/*"],
       "@pages/*": ["src/pages/*"],
       "@features/*": ["src/features/*"],
+      "@utils/*": ["src/utils/*"],
       "@assets/*": ["public/assets/*"]
     },
 
