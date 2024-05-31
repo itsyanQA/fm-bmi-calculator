@@ -1,0 +1,31 @@
+@use "../../../../styles/mixins" as *;
+
+.bmi-result {
+  background-image: linear-gradient(to right, var(--blue), #587dff);
+  border-radius: 8px 80px 80px 8px;
+  padding: 30px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+
+  &__pre-calculation-title {
+    @include heading-m;
+    color: var(--white);
+  }
+
+  &__pre-calculation-description {
+    @include body-s;
+    color: var(--white);
+  }
+
+  &__post-calculation-result {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__post-calculation-title {
+  }
+
+  &__post-calculation-bmi {
+  }
+}

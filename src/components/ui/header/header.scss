@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-inline: 96px;
+  min-height: 737px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    height: 737px;
+    width: 978px;
+    background-image: linear-gradient(120deg, transparent 0%, #d6e6fe 100%);
+    z-index: -1;
+    border-radius: 0 0 30px 30px;
+  }
+
+  & div:has(svg) {
+    padding-top: 70px;
+  }
+
+  & .intro-and-form {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+}

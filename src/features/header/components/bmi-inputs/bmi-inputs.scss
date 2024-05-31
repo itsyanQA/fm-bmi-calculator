@@ -1,0 +1,30 @@
+@use "../../../../styles/mixins" as *;
+
+.bmi-inputs {
+  gap: 24px;
+  display: flex;
+
+  &--metric {
+    flex-direction: row;
+  }
+
+  &--imperial {
+    flex-direction: column;
+  }
+
+  &__label-and-input {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  &__double-input {
+    display: flex;
+    gap: 26px;
+  }
+
+  & label {
+    @include body-s;
+    color: #5e6e85;
+  }
+}

@@ -1,0 +1,47 @@
+@use "../../../../styles/mixins" as *;
+
+.bmi-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+
+  & > span {
+    @include body-m-bold;
+    color: var(--gun-metal);
+    text-transform: capitalize;
+  }
+
+  &__button {
+    width: 31px;
+    height: 31px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 1px solid var(--borders);
+    position: relative;
+    transition: background-color 250ms ease-out;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--blue);
+    }
+
+    &--selected {
+      background-color: #345ff626;
+      border: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 14.5px;
+        height: 14.5px;
+        background-color: var(--blue);
+        border-radius: 100%;
+      }
+    }
+  }
+}

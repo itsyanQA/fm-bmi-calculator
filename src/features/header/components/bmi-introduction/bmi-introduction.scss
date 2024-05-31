@@ -1,0 +1,18 @@
+@use "../../../../styles/mixins" as *;
+
+.bmi-introduction {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 520px;
+
+  & h1 {
+    @include heading-xl;
+    color: var(--gun-metal);
+  }
+
+  & p {
+    @include body-m;
+    color: var(--dark-electric-blue);
+  }
+}
