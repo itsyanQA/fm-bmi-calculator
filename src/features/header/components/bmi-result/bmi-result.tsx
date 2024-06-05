@@ -1,8 +1,7 @@
-import { useSearchParams } from "react-router-dom";
 import "./bmi-result.scss";
+import { useSearchParams } from "react-router-dom";
 import { getUrlSearchParamsAsObject } from "@utils/common";
-import { MeasuringUnit } from "src/types";
-import { ImperialCalculationParams, MetricCalculationParams, calculateBmiImperial, calculateBmiMetric } from "@utils/bmi-calculation";
+import { calculateBmiImperial, calculateBmiMetric } from "@utils/bmi-calculation";
 
 export function BmiResult() {
   const [searchParams] = useSearchParams();
@@ -10,10 +9,10 @@ export function BmiResult() {
   const shouldCalculateUsingMetric = !!(cm && kg);
   const shouldCalculateUsingImperial = !!(lbs && st && ft && inches);
   const shouldDisplayBmiResult = shouldCalculateUsingMetric || shouldCalculateUsingImperial;
-  const calculateFunction = shouldCalculateUsingMetric ? calculateBmiMetric : calculateBmiImperial;
-  const calculateFunctionParams: MetricCalculationParams | ImperialCalculationParams = shouldCalculateUsingMetric
-    ? { kg, cm }
-    : { ft, inches, st, lbs };
+
+  const getBmi = () => {
+    return shouldCalculateUsingMetric ? calculateBmiMetric({ kg, cm }) : calculateBmiImperial({ ft, inches, st, lbs });
+  };
 
   const PreCalculation = (
     <>
@@ -25,8 +24,11 @@ export function BmiResult() {
   const PostCalculation = (
     <>
       <div className="bmi-result__post-calculation-result">
-        <span className="bmi-result__post-calculation-title">Your BMI is...</span>
-        <span className="bmi-result__post-calculation-bmi">{calculateFunction(calculateFunctionParams)}</span>
+        <div className="bmi-result__post-calculation-title-and-bmi">
+          <span className="bmi-result__post-calculation-title">Your BMI is...</span>
+          <span className="bmi-result__post-calculation-bmi">{getBmi()}</span>
+        </div>
+        <span className="bmi-result__post-calculation-description"></span>
       </div>
     </>
   );
