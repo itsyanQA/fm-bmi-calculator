@@ -1,0 +1,21 @@
+@use "../../../styles/mixins" as *;
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  & h3 {
+    @include heading-m;
+    color: var(--gun-metal);
+  }
+
+  & p {
+    @include body-m;
+    color: var(--dark-electric-blue);
+  }
+
+  & svg {
+    margin-bottom: 20px;
+  }
+}
