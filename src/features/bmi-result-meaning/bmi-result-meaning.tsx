@@ -1,4 +1,5 @@
 import "./bmi-result-meaning.scss";
+import LeftCurvedLine from "@assets/pattern-curved-line-left.svg?react";
 
 export function BmiResultMeaning() {
   return (
@@ -15,6 +16,7 @@ export function BmiResultMeaning() {
           activity, ideally about 30 minutes daily for five days a week.
         </p>
       </div>
+      <LeftCurvedLine />
     </div>
   );
 }
