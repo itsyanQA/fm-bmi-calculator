@@ -1,0 +1,29 @@
+@use "../../styles/mixins" as *;
+
+.bmi-result-meaning {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  & img {
+    object-fit: cover;
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 35%;
+    padding-bottom: 30px
+  }
+
+  & h2 {
+    @include heading-l;
+    color: var(--gun-metal);
+  }
+
+  & p {
+    @include body-m;
+    color: var(--dark-electric-blue);
+  }
+}
