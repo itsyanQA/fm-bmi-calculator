@@ -1,0 +1,12 @@
+.bmi-limitations {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+
+  & > svg {
+    position: absolute;
+    top: 40%;
+    left: 125px;
+  }
+}

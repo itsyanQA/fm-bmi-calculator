@@ -1,0 +1,28 @@
+@use "../../../../styles/mixins" as *;
+
+.bmi-limitation {
+  display: flex;
+  flex-direction: column;
+  width: 365px;
+  box-shadow: 16px 32px 56px #8faecf4d;
+  padding: 30px;
+  border-radius: 16px;
+  gap: 10px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    & h3 {
+      text-transform: capitalize;
+      @include heading-s;
+      color: var(--gun-metal);
+    }
+  }
+
+  &__description {
+    @include body-m;
+    color: var(--dark-electric-blue);
+  }
+}
