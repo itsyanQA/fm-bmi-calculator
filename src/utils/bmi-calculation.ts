@@ -1,3 +1,5 @@
+import { WeightStatus } from "src/types";
+
 export type ImperialCalculationParams = {
   ft: string;
   inches: string;
@@ -27,7 +29,35 @@ export function calculateBmiImperial(imperialParams: ImperialCalculationParams) 
 }
 
 export function calculateBmiMetric(metricParams: MetricCalculationParams) {
-  // Convert height from cm to m
   const height = +metricParams.cm / 100;
   return (+metricParams.kg / (height * height)).toFixed(1);
+}
+
+export function getBmiDescription(bmi: number) {
+  const weightStatus = getWeightStatus(bmi);
+
+  const bmiDescriptionPerWeightStatus: Record<WeightStatus, string> = {
+    underweight: "Your bmi falls within the underweight range",
+    "healthy-weight": "Your bmi falls within the healthy range",
+    overweight: "Your bmi falls within the overweight range",
+    obese: "Your bmi falls within the obese range",
+  };
+
+  return bmiDescriptionPerWeightStatus[weightStatus];
+}
+
+function getWeightStatus(bmi: number): WeightStatus {
+  const isUnderweight = bmi < 18.5;
+  const isOverweight = bmi >= 25 && bmi < 30;
+  const isObese = bmi >= 30;
+
+  if (isUnderweight) {
+    return "underweight";
+  } else if (isOverweight) {
+    return "overweight";
+  } else if (isObese) {
+    return "obese";
+  }
+
+  return "healthy-weight";
 }
