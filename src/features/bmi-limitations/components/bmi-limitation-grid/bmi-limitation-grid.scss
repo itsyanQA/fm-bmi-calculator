@@ -1,0 +1,13 @@
+@use "../../../../styles/mixins" as *;
+
+.bmi-limitation-grid {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include for-phone-only {
+    flex-direction: column;
+  }
+}

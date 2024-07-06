@@ -4,10 +4,18 @@
   display: flex;
   flex-direction: column;
   width: 365px;
-  box-shadow: 16px 32px 56px #8faecf4d;
+  box-shadow: 16px 10px 56px #8faecf4d;
   padding: 30px;
   border-radius: 16px;
-  gap: 10px;
+  gap: 14px;
+
+  @include for-tablet-only {
+    width: 48%;
+  }
+
+  @include for-phone-only {
+    width: unset;
+  }
 
   &__header {
     display: flex;

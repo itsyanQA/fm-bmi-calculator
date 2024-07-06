@@ -1,12 +1,37 @@
+@use "../../../styles/mixins" as *;
+
 .bmi-limitations {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
   position: relative;
 
-  & > svg {
+  &__desktop-rows {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+
+    @include for-desktop {
+      display: flex;
+    }
+  }
+
+  &__non-desktop-rows {
+    display: none;
+
+    @include for-tablet-down {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+    }
+  }
+
+  &__curved-line {
     position: absolute;
     top: 40%;
     left: 125px;
+
+    @include for-tablet-down {
+      display: none;
+    }
   }
 }

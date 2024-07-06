@@ -1,7 +1,7 @@
 import { FunctionComponent, SVGProps } from "react";
 import "./bmi-limitation.scss";
 
-type BmiLimitationProps = {
+export type BmiLimitationProps = {
   Icon: FunctionComponent<SVGProps<SVGSVGElement>>;
   title: string;
   description: string;

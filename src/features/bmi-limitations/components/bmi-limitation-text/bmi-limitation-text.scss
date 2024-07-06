@@ -1,0 +1,31 @@
+@use "../../../../styles/mixins" as *;
+
+.bmi-limitation-text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 564px;
+
+  @include for-tablet-down {
+    width: unset;
+    align-items: center;
+  }
+
+  & h2 {
+    @include heading-l;
+    color: var(--gun-metal);
+
+    @include for-tablet-down {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    @include body-m;
+    color: var(--dark-electric-blue);
+
+    @include for-tablet-down {
+      text-align: center;
+    }
+  }
+}
