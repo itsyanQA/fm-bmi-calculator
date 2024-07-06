@@ -5,6 +5,16 @@
   flex-direction: column;
   gap: 25px;
 
+  @include for-tablet-only {
+    flex-direction: row;
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   & h3 {
     @include heading-m;
     color: var(--gun-metal);

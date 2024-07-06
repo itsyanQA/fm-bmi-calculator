@@ -14,4 +14,12 @@
     @include heading-m;
     color: var(--gun-metal);
   }
+
+  @include for-tablet-down {
+    max-width: unset;
+  }
+
+  @include for-phone-only {
+    padding: 24px;
+  }
 }

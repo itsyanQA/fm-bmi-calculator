@@ -1,7 +1,17 @@
+@use "../styles/mixins" as *;
+
 main {
   display: flex;
   flex-direction: column;
   gap: 100px;
   margin-bottom: 50px;
   padding-inline: 96px;
+
+  @include for-tablet-only {
+    padding-inline: 43px;
+  }
+
+  @include for-phone-only {
+    padding-inline: 25px;
+  }
 }

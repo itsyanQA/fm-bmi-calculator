@@ -9,6 +9,10 @@
   flex-direction: column;
   min-height: 127px;
 
+  @include for-phone-only {
+    border-radius: 16px;
+  }
+
   &__pre-calculation-title {
     @include heading-m;
     color: var(--white);
@@ -37,5 +41,11 @@
   &__post-calculation-bmi {
     @include heading-xl;
     color: var(--white);
+  }
+
+  &__post-calculation-description {
+    @include body-s;
+    color: var(--white);
+    animation: fade-in 250ms ease-in;
   }
 }

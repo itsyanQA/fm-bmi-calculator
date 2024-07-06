@@ -6,8 +6,27 @@
   align-items: flex-end;
   position: relative;
 
+  @include for-tablet-down {
+    gap: 76px;
+  }
+
+  @include for-phone-only {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   & img {
     object-fit: cover;
+
+    @include for-tablet-only {
+      width: 360px;
+      margin-left: -100px;
+    }
+
+    @include for-phone-only {
+      width: 360px;
+    }
   }
 
   &__text-container {
@@ -15,12 +34,20 @@
     flex-direction: column;
     gap: 35px;
     width: 485px;
-    padding-bottom: 30px
+    padding-bottom: 30px;
+
+    @include for-phone-only {
+      width: unset;
+    }
   }
 
   & h2 {
     @include heading-l;
     color: var(--gun-metal);
+
+    @include for-tablet-down {
+      font-size: 32px;
+    }
   }
 
   & p {
@@ -32,5 +59,9 @@
     position: absolute;
     right: 15px;
     top: -50px;
+
+    @include for-tablet-down {
+      display: none;
+    }
   }
 }

@@ -1,8 +1,14 @@
+@use "../../../styles/mixins" as *;
+
 .recommendations-list {
   display: flex;
   gap: 80px;
   position: relative;
   padding-block: 50px;
+
+  @include for-tablet-down {
+    flex-direction: column;
+  }
 
   &::before {
     content: "";
@@ -15,5 +21,10 @@
     height: 100%;
     top: 0;
     border-radius: 16px;
+
+    @include for-tablet-down {
+      border-radius: unset;
+      width: 100vw;
+    }
   }
 }

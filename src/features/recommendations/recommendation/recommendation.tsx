@@ -13,8 +13,10 @@ export function Recommendation(props: RecommendationProps) {
   return (
     <div className="description">
       <Icon />
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <div className="description__text-container">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
     </div>
   );
 }

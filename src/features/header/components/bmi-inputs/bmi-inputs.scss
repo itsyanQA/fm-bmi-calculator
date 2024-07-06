@@ -4,6 +4,10 @@
   gap: 24px;
   display: flex;
 
+  @include for-phone-only {
+    flex-direction: column;
+  }
+
   &--metric {
     flex-direction: row;
   }
@@ -21,6 +25,10 @@
   &__double-input {
     display: flex;
     gap: 26px;
+
+    @include for-phone-only {
+      gap: 16px;
+    }
   }
 
   & label {

@@ -1,3 +1,5 @@
+@use "../../../styles/mixins" as *;
+
 header {
   display: flex;
   flex-direction: column;
@@ -13,10 +15,34 @@ header {
     background-image: linear-gradient(120deg, transparent 0%, #d6e6fe 100%);
     z-index: -1;
     border-radius: 0 0 30px 30px;
+
+    @include for-tablet-down {
+      width: 100vw;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include for-tablet-down {
+      height: 1280px;
+    }
   }
 
   & div:has(svg) {
     padding-top: 70px;
+
+    @include for-tablet-only {
+      padding-block: 25px 40px;
+    }
+
+    @include for-tablet-down {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include for-phone-only {
+      padding-block: 25px;
+    }
   }
 
   & .intro-and-form {
@@ -24,5 +50,17 @@ header {
     align-items: center;
     gap: 100px;
     justify-content: space-between;
+
+    @include for-tablet-down {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  & svg {
+    @include for-tablet-down {
+      width: 36.72px;
+      height: 36.72px;
+    }
   }
 }

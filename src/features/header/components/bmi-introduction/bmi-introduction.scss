@@ -6,13 +6,45 @@
   gap: 30px;
   max-width: 520px;
 
+  & br {
+    &:first-child {
+      display: none;
+
+      @include for-tablet-down {
+        display: block;
+      }
+    }
+
+    &:last-child {
+      display: none;
+
+      @include for-phone-only {
+        display: block;
+      }
+    }
+  }
+
+  @include for-tablet-down {
+    max-width: unset;
+    align-items: center;
+  }
+
   & h1 {
     @include heading-xl;
     color: var(--gun-metal);
+
+    @include for-tablet-down {
+      @include heading-l;
+      text-align: center;
+    }
   }
 
   & p {
     @include body-m;
     color: var(--dark-electric-blue);
+
+    @include for-tablet-down {
+      text-align: center;
+    }
   }
 }
